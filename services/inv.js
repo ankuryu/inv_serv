@@ -10,6 +10,7 @@ function getMultiple(page=1){
 function getAllMfg(){
   let sql = "Select distinct mfg from pmisu2122 ;"
   ret = db3.query(sql,[]); 
+  console.log("mfg :",ret)
   return ret 
 
 }
@@ -17,6 +18,7 @@ function getAllMfg(){
 function getAllIcode() {
   let sql = "Select distinct icode from pmisu2122 ;"
   ret = db3.query(sql,[]); 
+  console.log("Icode:",ret)
   return ret 
 
 }
