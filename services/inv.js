@@ -10,6 +10,7 @@ function getMultiple(page=1){
 function getAllMfg(){
   let sql = "Select distinct mfg from pmisu2122 ;"
   ret = db3.query(sql,[]); 
+  ret = db3.rslt;
   console.log("mfg :",ret)
   return ret 
 
