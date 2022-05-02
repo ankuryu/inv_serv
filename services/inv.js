@@ -1,23 +1,25 @@
-const db = require('./db.js')
+//const db = require('./db.js')
 const config = require('../config')
-const db3 = require('../services/db')
+
+const db3 = require('../services/aadb')
+//const db3 = require('../services/db')
 
 function getMultiple(page=1){
   
 
 }
 
-function getAllMfg(){
+async function getAllMfg(){
   let sql = "Select distinct mfg from pmisu2122 ;"
-  ret = db3.query(sql,[]); 
+  ret = await db3.query(sql,[]); 
   console.log("mfg :",ret)
   return ret 
 
 }
 
-function getAllIcode() {
+async function getAllIcode() {
   let sql = "Select distinct icode from pmisu2122 ;"
-  ret = db3.query(sql,[]); 
+  ret = await db3.query(sql,[]); 
   console.log("Icode:",ret)
   return ret 
 

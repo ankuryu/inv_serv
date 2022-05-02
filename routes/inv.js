@@ -2,13 +2,16 @@ const express = require('express')
 const router = express.Router();
 const inv = require('../services/inv.js');
 
-router.get('/api/mfg/', (req,res,next)=>{
+router.get('/api/mfg/',(req,res,next)=>{
   try {
     let msg = 'Distinct MFG'
     console.log("api/mfg")
-    let rslt = inv.getAllMfg()
-    console.log(rslt)
-    res.send(msg).status(200)
+    let rslt =  inv.getAllMfg().then((a)=>{console.log(a)
+      res.json(a).status(200)
+    })
+
+
+    //console.log("result",rslt)
   } catch(err){
     console.log(err.message)
   }
@@ -17,10 +20,9 @@ router.get('/api/mfg/', (req,res,next)=>{
 router.get('/api/icode/',(req,res,next)=>{
 
   try {
-    let rslt = inv.getAllIcode()
-    console.log(rslt)
-    msg = `The icode is `
-    res.send(msg).status(200)
+    let rslt = inv.getAllIcode().then((d)=>{
+      res.json(d).status(200)
+    })
   } catch(err){
     console.log(err.message)
   }
