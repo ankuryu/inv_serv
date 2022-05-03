@@ -11,7 +11,12 @@ function getMultiple(page=1){
 
 async function getAllMfg(){
   let sql = "Select distinct mfg from pmisu2122 ;"
+<<<<<<< HEAD
   ret = await db3.query(sql,[]); 
+=======
+  ret = db3.query(sql,[]); 
+  ret = db3.rslt;
+>>>>>>> 4c339d9115a9a8d5b98113e42cee886a31ded60c
   console.log("mfg :",ret)
   return ret 
 
