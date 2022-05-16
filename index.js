@@ -2,6 +2,8 @@ const express = require('express');
 const  app = express();
 const port = 3000 || process.env.PORT ;
 const invRouter = require('./routes/inv');
+const outRouter = require('./routes/rcv')
+const payRouter = require('./routes/pyb')
 
 app.use(express.json());
 
@@ -12,6 +14,8 @@ app.get('/',(req,res,next)=>{
 
 
 app.use('/inv',invRouter)
+app.use('/out',outRouter)
+//app.use ('/pay',payRouter)
 
 app.listen(port,()=>{
   console.log(`Listening on Localhost:${port}`)

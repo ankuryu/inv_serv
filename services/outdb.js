@@ -3,7 +3,7 @@
 const sqlite = require('sqlite3').verbose();
 const path = require("path");
 
-var db = null;
+var dbout = null;
 opn_out()
 
 
@@ -27,7 +27,7 @@ function open(path){
 
 function query(sql,params){
   return new Promise( (resolve,reject)=>{ 
-    db.prepare(sql).all(params,(err,row)=>{
+    dbout.prepare(sql).all(params,(err,row)=>{
       if(err) reject("Read Error :"+err.message)
       else{
         resolve(row)
@@ -38,7 +38,7 @@ function query(sql,params){
 
 function run(sql,params){
   return new Promise((resolve,reject)=>{
-    db.prepare(sql).run(params,(err,row)=>{
+    dbout.prepare(sql).run(params,(err,row)=>{
       if(err) reject()
       else{
         resolve(row)
@@ -49,7 +49,7 @@ function run(sql,params){
 
 
 module.exports = {
-  db,
+  dbout,
   open,
   query,
   run
