@@ -81,7 +81,7 @@ function run(sql,params){
 
 module.exports = {
  getOne,
- gettAll,
+ getAll,
  putOne,
  delOne,
  addOne

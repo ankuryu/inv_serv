@@ -7,7 +7,7 @@ router.get('/kc/',(req,res,next)=>{
     // get all entries of the citi7303
     let msg = 'Distinct MFG'
     console.log("/kc")
-    let rslt =  crd.getAllkc().then((a)=>{console.log(a)
+    let rslt =  crd.getAll('kc').then((a)=>{console.log(a)
       res.json(a).status(200)
     })
     //console.log("result",rslt)
@@ -21,7 +21,7 @@ router.get('/pm/',(req,res,next)=>{
     // get all entries of the citi7303
     let msg = 'Distinct MFG'
     console.log("/pm")
-    let rslt =  crd.getAllpm().then((a)=>{console.log(a)
+    let rslt =  crd.getAll('pm').then((a)=>{console.log(a)
       res.json(a).status(200)
     })
     //console.log("result",rslt)
