@@ -49,7 +49,7 @@ function run(sql,params){
 }
 
 
-module.exports = {
+ module.exports = {
   db,
   open,
   query,
