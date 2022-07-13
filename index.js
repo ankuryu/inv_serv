@@ -4,6 +4,7 @@ const port = 3000 || process.env.PORT ;
 const invRouter = require('./routes/inv');
 const outRouter = require('./routes/rcv')
 const payRouter = require('./routes/pyb')
+const crdRouter = require('./routes/crd')
 
 app.use(express.json());
 
@@ -15,6 +16,7 @@ app.get('/',(req,res,next)=>{
 
 app.use('/inv',invRouter)
 app.use('/out',outRouter)
+app.use('/crd',crdRouter)
 //app.use ('/pay',payRouter)
 
 app.listen(port,()=>{
