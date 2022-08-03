@@ -8,13 +8,13 @@ opn_crd()
 
 async function opn_crd(){
   //console.log("db:",db)
-  rt = await db3.open(path.resolve(__dirname,'../db/crcard.db3'))
+  rt = await db3.open(path.resolve(__dirname,'../db/crcardfy2122.db3'))
   console.log("Credit Card Database Opened",rt)
 }
 
 async function getAll(co) {
   co = co.toLowerCase()
-  sql = `select * from citi${co};`
+  sql = `select * from citi${co} limit 20 offset 1;`
   ret = await db3.query(sql,[])
   return ret
 }
