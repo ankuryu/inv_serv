@@ -6,6 +6,7 @@ const invRouter = require('./routes/inv');
 const outRouter = require('./routes/rcv')
 const payRouter = require('./routes/pyb')
 const crdRouter = require('./routes/crd')
+const mcsRouter = require('./routes/mcs')
 
 app.use(cors())
 app.use(express.json());
@@ -19,6 +20,7 @@ app.get('/',(req,res,next)=>{
 app.use('/inv',invRouter)
 app.use('/out',outRouter)
 app.use('/crd',crdRouter)
+app.use('/mcs',mcsRouter)
 //app.use ('/pay',payRouter)
 
 app.listen(port,()=>{
