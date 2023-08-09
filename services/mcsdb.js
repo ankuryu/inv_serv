@@ -20,7 +20,7 @@ function open(path){
     //console.log("path ",path)
     dbm3 = new sqlite.Database(path,function(err){
       if(err) reject("Open Error " + err.message)
-      else { resolve(dbout)
+      else { resolve(dbm3)
       }  
     })
   })

@@ -12,6 +12,7 @@ router.get('/stk/:mfg/:icode/:asize',(req,res,next)=>{
     console.log('mfg,icode,asize',mfg,icode,asize )
     let rslt = mcs.getStk(mfg,icode,asize).then( (rt)=>{
     res.json(rt).status(200)
+
     } );
 
   } catch(err){
@@ -26,7 +27,9 @@ router.get('/sls/:mfg/:icode/:asize',(req,res,next)=>{
   try{
     console.log('mfg,icode,asize',mfg,icode,asize )
     let rslt = mcs.getSls(mfg,icode,asize).then( (rt)=>{
+			console.log("01",rt)
     res.json(rt).status(200)
+		console.log("Rslt:",rslt,rt)
     } );
 
   } catch(err){
@@ -41,6 +44,21 @@ router.get('/pur/:mfg/:icode/:asize',(req,res,next)=>{
   try{
     console.log('mfg,icode,asize',mfg,icode,asize )
     let rslt = mcs.getPur(mfg,icode,asize).then( (rt)=>{
+    res.json(rt).status(200)
+    } );
+
+  } catch(err){
+    console.log(err.message)
+  }
+})
+
+router.get('/stk/:mfg/:icode/:asize',(req,res,next)=>{
+  let mfg = req.params.mfg
+  let icode = req.params.icode
+  let asize = req.params.asize
+  try{
+    console.log('mfg,icode,asize',mfg,icode,asize )
+    let rslt = mcs.getStk(mfg,icode,asize).then( (rt)=>{
     res.json(rt).status(200)
     } );
 
